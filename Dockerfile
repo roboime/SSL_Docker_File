@@ -28,6 +28,7 @@ USER root
 RUN apt-get update && apt-get install git && apt-get install nano && apt-get install net-tools && apt-get install iputils-ping
 RUN git clone https://github.com/roboime/SSL_AI.git
 RUN cd SSL_AI && git checkout robocup2021_adjusts && git pull
+RUN chmod -R 777 /home/default/SSL_AI
 USER default
 
 ENTRYPOINT ["/docker/startup.sh"]
